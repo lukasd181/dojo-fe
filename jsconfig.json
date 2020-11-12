@@ -2,6 +2,6 @@
     "compilerOptions": {
       "baseUrl": "src"
     },
-    "include": ["src"],
+    "include": ["src", "PublicSite/Main.js", "PublicSite/VisitorPage.js", "PublicSite/LoginModal.js", "PublicSite/CreateFighterProfile.js"],
     "exclude": ["node_modules", "**/node_modules/*"]
   }

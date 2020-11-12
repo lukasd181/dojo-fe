@@ -1,38 +1,422 @@
-.App {
+.background {
+  height: 100vh;
+  width: 100vw;
+  background: url(./photos/background-pictures/background4.jpeg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+}
+.register-area {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border-radius: 5px;
+  padding: 30px 30px;
+  color: white;
+  background-color: #111111;
+  /* background-image: linear-gradient(315deg, #000000 0%, #414141 74%); */
+  font-family: arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.register-form label input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  font-weight: 500;
+  /* background-image: linear-gradient(200deg, #192e3f 0%, #7298a7 100%); */
+  /* background-image: linear-gradient(200deg, #03090e 0%, #437386 100%); */
+}
+
+.register-form label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.register-as {
+  display: flex;
+  justify-content: center;
+}
+
+.register-form .register-as button {
+  align-self: center;
+  text-transform: uppercase;
+  width: 120px;
+  margin-top: 20px;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  background-color: #17889c;
+  padding: 10px 10px;
+  font-size: 8px;
+  margin-left: 5px;
+}
+
+.register-agreement {
+  color: white;
+  font-size: 10px;
   text-align: center;
+  padding-top: 15px;
+}
+.register-agreement span {
+  color: #17889c;
+}
+/* Private Navbar */
+.private-nav {
+  display: flex;
+  justify-content: center;
+  background-color: #17889c;
+}
+.private-nav-container {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  align-items: center;
+}
+.nav-logo {
+  heihgt: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.private-nav-left-items {
+  display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.private-nav-right-items {
+  display: flex;
+  justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.private-nav-login-button {
+  margin: 20px;
+  align-self: center;
+  text-transform: uppercase;
+  width: 70px;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  padding: 5px 5px;
+  font-size: 10px;
+}
+
+.private-nav-signup-button {
+  margin: 20px;
+  align-self: center;
+  text-transform: uppercase;
+  width: 120px;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  padding: 5px 5px;
+  font-size: 10px;
+}
+.private-nav {
+  width: 100%;
+}
+
+/* LoginPage */
+
+.login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: black;
+}
+
+.login-header {
+  border-bottom: white 1px solid;
+}
+
+.header-text {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color: white;
+  font-size: 20px;
+  width: 100% !important;
+  padding: 10px 10px;
+}
+
+.login-body {
+  align-items: center;
+  width: 300px;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 10px 10px;
+  width: 100%;
+}
+
+.login-form label {
+  font-weight: 500;
+  font-size: 14px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.login-form label input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  font-weight: 500;
+}
+
+.login-submit {
+  align-self: center;
+  text-transform: uppercase;
+  width: 120px;
+  margin-top: 20px;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  background-color: #17889c;
+  padding: 10px 10px;
+  color: white;
+  font-size: 10px;
+}
+
+/* Visitor page */
+.vistor-page-background {
+  height: calc(100vh - 70px);
+  background-image: url("./photos/background-pictures/background4.jpeg");
+}
+
+/*Create Fighter Profile Page*/
+
+.create-fighter-header {
+  text-align: center;
+}
+
+.create-fighter-background {
+  height: 100vh;
+  width: 100vw;
+  background: url(./photos/background-pictures/background4.jpeg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-fighter-container {
+  border: 1px red solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-fighter-body form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border-radius: 5px;
+  padding: 30px 30px;
+  color: white;
+  background-color: #111111;
+  /* background-image: linear-gradient(315deg, #000000 0%, #414141 74%); */
+  font-family: arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.create-fighter-body form label input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  font-weight: 500;
+}
+
+.create-fighter-submit {
+  align-self: center;
+  text-transform: uppercase;
+  width: 120px;
+  margin-top: 20px;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  background-color: #17889c;
+  padding: 10px 10px;
+  font-size: 8px;
+  margin-left: 5px;
+}
+
+/* Fighter Main*/
+.header-back-ground {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("https://images.unsplash.com/photo-1601822586904-cf6f60f7b9d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1942&q=80");
+}
+.fighter-main-container {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fighter-main-col-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fighter-main-col-2 {
+}
+
+/*Me Fighter Info Card */
+.me-fighter {
+  border: 1px red solid;
+  display: flex;
+}
+
+.me-fighter-imageUrl {
+  width: 100px;
+}
+
+.me-fighter-left {
+  display: flex;
+  flex-direction: column;
+}
+
+/*  Match Card */
+.match-card {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+}
+
+.match-card-img-f1 {
+  max-width: 200px;
+}
+
+.match-card-header {
+  padding: 5px 5px;
+  font-weight: 500;
+  color: white;
+  background-color: #036b7e;
+
+  display: flex;
+  justify-content: space-between;
+}
+.match-card-body {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border: 3px solid;
+  border: 2px orange solid;
+  padding: 10px 10px;
+}
+.match-card-fighter-name {
+  font-weight: 700;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.text-vs {
+  font-size: 20px;
+  font-weight: 700;
+  color: #036b7e;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Host */
+
+/* Main*/
+
+.host-main {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Me Host*/
+.me-host {
+  display: flex;
+  flex-direction: column;
+}
+
+.me-host-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.me-host-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.match-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Sparring page*/
+.sparring-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sparring-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Sparring request card*/
+
+.spar-request-card-img {
+}
+.spar-request-card-actual-img {
+  width: 100px;
+  height: 100px;
+}
+
+.spar-request-card {
+  display: flex;
+  justify-content: left;
+}
+
+.spar-request-card-right {
+  display: flex;
+  align-items: center;
+}
+
+.spar-request-button button {
+  margin: 20px;
+  align-self: center;
+  text-transform: uppercase;
+  width: 120px;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  padding: 5px 5px;
+  font-size: 10px;
 }
