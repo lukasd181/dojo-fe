@@ -20,12 +20,27 @@ const FighterMatchCard = ({ match }) => {
   const vsDisplay = (fighters) => {
     if (fighters.length == 0) {
       return (
-        <div className="match-card-body-left">
-          <div className="fighter-1-unknown">Looking</div>
-          <div className="match-card-vs">
-            <div className="text-center">VS</div>
+        <div className="match-card-body-left d-flex align-items-center justify-content-center">
+          <div>
+            <div className="fighter-1-img">
+              <img
+                src={`https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ0xiNsdDa-yMXgqwLL3sLyqaQVzCnGh3bB1A&usqp=CAU`}
+              />
+            </div>
+            <div className="fighter-1-unknown">Looking</div>
           </div>
-          <div className="fighter-2-unknown">Looking</div>
+
+          <div className="match-card-vs">
+            <div className="text-center vs">VS</div>
+          </div>
+          <div>
+            <div className="fighter-1-img">
+              <img
+                src={`https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ0xiNsdDa-yMXgqwLL3sLyqaQVzCnGh3bB1A&usqp=CAU`}
+              />
+            </div>
+            <div className="fighter-1-unknown">Looking</div>
+          </div>
         </div>
       );
     } else if (fighters.length == 1) {

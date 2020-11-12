@@ -35,7 +35,7 @@ const MatchFeed = () => {
       ) : (
         <div>
           <div className="match-feed-header">
-            <div>Match Feed</div>
+            <div className="match-feed-title">Match Feed</div>
             <div className="match-feed-filter">
               <div className="division-filter">
                 <Form
@@ -45,107 +45,130 @@ const MatchFeed = () => {
                     dispatch(matchAction.getMatches(matchCurrentPage, filter));
                   }}
                 >
-                  <Form.Control
-                    as="select"
-                    onChange={(e) => {
-                      if (e.target.value === "All" || e.target.value === null) {
-                        setFilter({ ...filter, division: "" });
-                      } else {
-                        setFilter({ ...filter, division: e.target.value });
-                      }
-                    }}
-                  >
-                    <option>
-                      {filter.division ? filter.division : "Division"}
-                    </option>
-                    <option> Strawweight</option>
-                    <option> Bantamweight</option>
-                    <option> Featherweight</option>
-                    <option> Flyweight</option>
-                    <option> Lightweight</option>
-                    <option> Welterweight</option>
-                    <option> Middleweight</option>
-                    <option> Light Heavyweight</option>
-                    <option> Heavyweight</option>
-                    <option>All</option>
-                  </Form.Control>
-                  <Form.Control
-                    as="select"
-                    onChange={(e) => {
-                      console.log(e.target.value);
-                      if (e.target.value === "All" || e.target.value === null) {
-                        setFilter({ ...filter, gender: "" });
-                      } else {
-                        setFilter({ ...filter, gender: e.target.value });
-                      }
-                    }}
-                  >
-                    <option>{filter.gender ? filter.gender : "Gender"}</option>
-                    <option>male</option>
-                    <option> female</option>
-                    <option>All</option>
-                  </Form.Control>
-                  <Form.Control
-                    as="select"
-                    onChange={(e) => {
-                      console.log(e.target.value);
-                      if (e.target.value === "All" || e.target.value === null) {
-                        setFilter({ ...filter, status: "" });
-                      } else {
-                        setFilter({ ...filter, status: e.target.value });
-                      }
-                    }}
-                  >
-                    <option>{filter.status ? filter.status : "Status"}</option>
-                    <option>ready</option>
-                    <option>ended</option>
-                    <option>looking</option>
-                    <option>happening</option>
-                    <option>cancelled</option>
-                    <option>All</option>
-                  </Form.Control>
-                  <Form.Control
-                    as="select"
-                    onChange={(e) => {
-                      console.log(e.target.value);
-                      if (e.target.value === "All" || e.target.value === null) {
-                        setFilter({ ...filter, form: "" });
-                      } else {
-                        setFilter({ ...filter, form: e.target.value });
-                      }
-                    }}
-                  >
-                    <option>{filter.form ? filter.form : "Form"}</option>
-                    <option>MMA</option>
-                    <option>MuayThai</option>
-                    <option>Boxing</option>
-                    <option>KickBoxing</option>
-                    <option>JiuJitsu</option>
-                    <option>All</option>
-                  </Form.Control>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Location</Form.Label>
+                  <div className="d-flex input-row">
                     <Form.Control
-                      type="text"
-                      placeholder="Enter your location"
+                      as="select"
+                      onChange={(e) => {
+                        if (
+                          e.target.value === "All" ||
+                          e.target.value === null
+                        ) {
+                          setFilter({ ...filter, division: "" });
+                        } else {
+                          setFilter({ ...filter, division: e.target.value });
+                        }
+                      }}
+                    >
+                      <option>
+                        {filter.division ? filter.division : "Division"}
+                      </option>
+                      <option> Strawweight</option>
+                      <option> Bantamweight</option>
+                      <option> Featherweight</option>
+                      <option> Flyweight</option>
+                      <option> Lightweight</option>
+                      <option> Welterweight</option>
+                      <option> Middleweight</option>
+                      <option> Light Heavyweight</option>
+                      <option> Heavyweight</option>
+                      <option>All</option>
+                    </Form.Control>
+                    <Form.Control
+                      as="select"
                       onChange={(e) => {
                         console.log(e.target.value);
-                        setFilter({
-                          ...filter,
-                          location: e.target.value,
-                        });
+                        if (
+                          e.target.value === "All" ||
+                          e.target.value === null
+                        ) {
+                          setFilter({ ...filter, gender: "" });
+                        } else {
+                          setFilter({ ...filter, gender: e.target.value });
+                        }
                       }}
-                    />
-                  </Form.Group>
+                    >
+                      <option>
+                        {filter.gender ? filter.gender : "Gender"}
+                      </option>
+                      <option>male</option>
+                      <option> female</option>
+                      <option>All</option>
+                    </Form.Control>
+                    <Form.Control
+                      as="select"
+                      onChange={(e) => {
+                        console.log(e.target.value);
+                        if (
+                          e.target.value === "All" ||
+                          e.target.value === null
+                        ) {
+                          setFilter({ ...filter, status: "" });
+                        } else {
+                          setFilter({ ...filter, status: e.target.value });
+                        }
+                      }}
+                    >
+                      <option>
+                        {filter.status ? filter.status : "Status"}
+                      </option>
+                      <option>ready</option>
+                      <option>ended</option>
+                      <option>looking</option>
+                      <option>happening</option>
+                      <option>cancelled</option>
+                      <option>All</option>
+                    </Form.Control>{" "}
+                  </div>
+                  <div className="d-flex input-row">
+                    <Form.Control
+                      className="form-input"
+                      as="select"
+                      onChange={(e) => {
+                        console.log(e.target.value);
+                        if (
+                          e.target.value === "All" ||
+                          e.target.value === null
+                        ) {
+                          setFilter({ ...filter, form: "" });
+                        } else {
+                          setFilter({ ...filter, form: e.target.value });
+                        }
+                      }}
+                    >
+                      <option>{filter.form ? filter.form : "Form"}</option>
+                      <option>MMA</option>
+                      <option>MuayThai</option>
+                      <option>Boxing</option>
+                      <option>KickBoxing</option>
+                      <option>JiuJitsu</option>
+                      <option>All</option>
+                    </Form.Control>
+                    <Form.Group controlId="formBasicEmail">
+                      <Form.Control
+                        type="text"
+                        placeholder="Enter your location"
+                        onChange={(e) => {
+                          console.log(e.target.value);
+                          setFilter({
+                            ...filter,
+                            location: e.target.value,
+                          });
+                        }}
+                      />
+                    </Form.Group>
 
-                  <Button type="submit">Filter</Button>
+                    <Button type="submit" className="filter-button">
+                      Filter
+                    </Button>
+                  </div>
                 </Form>
               </div>
             </div>
           </div>
           <div className="match-feed-body">
             {matchList && console.log(matchList)}
-            {matchList && matchList.map((match) => <FighterMatchCard match={match} />)}
+            {matchList &&
+              matchList.map((match) => <FighterMatchCard match={match} />)}
           </div>
           <MatchPagination />
         </div>

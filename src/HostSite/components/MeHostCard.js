@@ -15,15 +15,17 @@ const MeHostCard = () => {
       {meHost ? (
         <div className="me-host">
           <div className="me-host-header">
-            <div className="me-host-type">Host</div>
+            <div className="me-host-body-right">
+              <img src={meHost.creator.avatarUrl} width="100px" />
+            </div>
+            <div>
+              <div className="me-host-name">{meHost.creator.name}</div>
+              <div className="me-host-type">Host</div>
+            </div>
           </div>
           <div className="me-host-body">
             <div className="me-host-body-left">
-              <div className="me-host-name">{meHost.creator.name}</div>
-              <div>Club Name: {meHost.clubName}</div>
-            </div>
-            <div className="me-host-body-right">
-              <img src={meHost.creator.avatarUrl} width="100px" />
+              <div className="me-host-club">Club Name: <span className="clubname"></span>{meHost.clubName}</div>
             </div>
           </div>
         </div>

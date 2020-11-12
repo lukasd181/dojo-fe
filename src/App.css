@@ -61,12 +61,19 @@
   font-weight: 700;
   letter-spacing: 1px;
   border-radius: 5px;
-  background-color: #17889c;
+  background-color: #ba181b;
   padding: 10px 10px;
   font-size: 8px;
   margin-left: 5px;
 }
 
+.submit-as-host {
+  background-color: #17889c !important;
+}
+
+.private-nav-middle-items .private-nav-login-button {
+  background-color: green !important;
+}
 .register-agreement {
   color: white;
   font-size: 10px;
@@ -80,12 +87,18 @@
 .private-nav {
   display: flex;
   justify-content: center;
-  background-color: #17889c;
+  background: rgb(22, 26, 29);
+  background: linear-gradient(
+    180deg,
+    rgba(22, 26, 29, 1) 0%,
+    rgb(64, 70, 75) 100%
+  );
+  border-bottom: 1px solid rgba(54, 54, 54, 0.082);
 }
 .private-nav-container {
   display: flex;
   justify-content: space-between;
-  width: 800px;
+  width: 90%;
   align-items: center;
 }
 .nav-logo {
@@ -110,9 +123,9 @@
   font-weight: 700;
   letter-spacing: 1px;
   border-radius: 5px;
-  background-color: black;
+  background-color: #aca6a5;
   color: white;
-  padding: 5px 5px;
+  padding: 10px 5px;
   font-size: 10px;
 }
 
@@ -125,9 +138,9 @@
   font-weight: 700;
   letter-spacing: 1px;
   border-radius: 5px;
-  background-color: black;
+  background-color: #e5383b;
   color: white;
-  padding: 5px 5px;
+  padding: 10px 5px;
   font-size: 10px;
 }
 .private-nav {
@@ -202,10 +215,33 @@
 
 /* Visitor page */
 .vistor-page-background {
-  height: calc(100vh - 70px);
-  background-image: url("./photos/background-pictures/background4.jpeg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 76px);
+  background-image: url("https://images.unsplash.com/photo-1589456506629-b2ea1a8576fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2051&q=80");
+  background-size: cover;
 }
 
+.catchphrase {
+  filter: drop-shadow(0 0 2px rgb(255, 255, 255));
+  color: white;
+  font-size: 50px;
+  opacity: 0;
+  margin-left: -100px;
+  animation: appear 2s linear 1s forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    margin-left: -100px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
 /*Create Fighter Profile Page*/
 
 .create-fighter-header {
@@ -330,6 +366,7 @@
   text-align: center;
   border: 3px solid;
   border: 2px orange solid;
+  color: white;
   padding: 10px 10px;
 }
 .match-card-fighter-name {
@@ -356,16 +393,58 @@
 .me-host {
   display: flex;
   flex-direction: column;
+  padding: 0 30px 30px 30px;
+  /* border: 1px solid black;
+ */
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQXApizI0w7ZtwRgnrukIJ0Shv0YuvsjoJHmw&usqp=CAU");
+  background-size: cover;
+  color: white;
+  border-radius: 15px;
+  margin: 10px;
+  width: 350px;
 }
 
 .me-host-header {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+  font-size: 18px;
 }
 
+.me-host-body-right {
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  position: relative;
+  /* border-radius: 50%; */
+}
+
+.me-host-body-right img {
+  position: absolute;
+  min-width: 70px;
+  min-height: 70px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .me-host-body {
   display: flex;
   justify-content: space-between;
+}
+
+.me-host-club {
+  font-weight: 600;
+}
+
+.me-host-type {
+  font-size: 12px;
+}
+
+.clubname {
+  font-size: 20px !important;
 }
 
 .match-card {
@@ -419,4 +498,63 @@
   color: white;
   padding: 5px 5px;
   font-size: 10px;
+}
+
+.private-nav-logo {
+  filter: drop-shadow(0 0 2px white) drop-shadow(0 0 2px white)
+    drop-shadow(0 0 2px white) drop-shadow(0 0 2px white);
+}
+
+/* .form-input {
+  width: 150px !important;
+} */
+
+.filter-button {
+}
+
+.input-row select,
+.input-row div,
+.input-row .filter-button {
+  margin: 5px !important;
+  width: 30% !important;
+}
+
+.input-row {
+  width: 100% !important;
+  justify-content: space-between;
+}
+
+.match-feed-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 25px;
+  background-color: rgb(255, 98, 50);
+  margin: 10px;
+  color: white;
+  filter: drop-shadow(0 0 2px rgb(88, 88, 88));
+}
+
+.fighter-1-img img {
+  position: absolute;
+  min-width: 70px;
+  height: 70px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fighter-1-img {
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  position: relative;
+  /* border-radius: 50%; */
+}
+
+.vs {
+  font-style: italic;
+  font-weight: 700;
+  color: #e5383b;
 }
