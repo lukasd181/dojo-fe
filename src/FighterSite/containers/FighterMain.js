@@ -12,10 +12,7 @@ import SparringRequestList from "FighterSite/components/SparringRequestList";
 const FighterMain = () => {
   return (
     <div>
-     
-     <div className="header-back-ground"></div>
-      <div className="fighter-main-container">
-      
+      <div className="fighter-main-container avoidNav">
         <div className="fighter-main-col-1">
           <MeFighterInfoCard />
           <SparringRequestList />
@@ -23,9 +20,9 @@ const FighterMain = () => {
         <div className="fighter-main-col-2">
           <MatchFeed />
         </div>
-        <div className="fighter-main-col-3">
+        {/* <div className="fighter-main-col-3 d-none d-xl-block">
           <SparringParnerList />
-        </div>
+        </div> */}
       </div>
     </div>
   );

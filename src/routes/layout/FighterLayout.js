@@ -8,10 +8,12 @@ const FighterLayout = () => {
   return (
     <div>
       <FighterNavbar />
-      <Switch>
-        <Route exact path="/fighter/main" component={FighterMain} />
-        <Route exact path="/fighter/sparring" component={SparringPage} />
-      </Switch>
+ 
+        <Switch>
+          <Route exact path="/fighter/main" component={FighterMain} />
+          <Route exact path="/fighter/sparring" component={SparringPage} />
+        </Switch>
+    
     </div>
   );
 };

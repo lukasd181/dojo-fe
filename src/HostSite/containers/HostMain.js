@@ -6,7 +6,7 @@ import React from "react";
 const HostMain = () => {
   return (
     <div>
-      <div className="host-main">
+      <div className="host-main avoidNav">
         <div className="host-main-col-1">
           <MeHostCard />
         </div>

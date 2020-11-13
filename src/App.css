@@ -87,12 +87,16 @@
 .private-nav {
   display: flex;
   justify-content: center;
-  background: rgb(22, 26, 29);
-  background: linear-gradient(
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.603);
+  /* background: rgb(22, 26, 29); */
+  /* background-image: url("https://image.freepik.com/free-photo/dark-grunge-style-scratched-metal-surface_1048-12951.jpg"); */
+  /* background-size: cover; */
+  /* background: linear-gradient(
     180deg,
     rgba(22, 26, 29, 1) 0%,
     rgb(64, 70, 75) 100%
-  );
+  ); */
   border-bottom: 1px solid rgba(54, 54, 54, 0.082);
 }
 .private-nav-container {
@@ -218,11 +222,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 76px);
+  height: 100vh;
   background-image: url("https://images.unsplash.com/photo-1589456506629-b2ea1a8576fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2051&q=80");
   background-size: cover;
 }
 
+.avoidNav {
+  padding-top: 90px;
+}
 .catchphrase {
   filter: drop-shadow(0 0 2px rgb(255, 255, 255));
   color: white;
@@ -258,9 +265,11 @@
 }
 
 .create-fighter-container {
-  border: 1px red solid;
+  /* border: 1px red solid; */
   display: flex;
+  height: 100%;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -271,12 +280,26 @@
   border-radius: 5px;
   padding: 30px 30px;
   color: white;
-  background-color: #111111;
+  background-color: #111111cc;
   /* background-image: linear-gradient(315deg, #000000 0%, #414141 74%); */
   font-family: arial, sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
+  animation: 2s fadein 0.5s linear forwards;
+  opacity: 0;
 }
+.react-datepicker-wrapper {
+  color: black;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .create-fighter-body form label input {
   width: 100%;
   border-radius: 5px;
@@ -304,12 +327,14 @@
 .header-back-ground {
   height: 100vh;
   width: 100vw;
-  background-image: url("https://images.unsplash.com/photo-1601822586904-cf6f60f7b9d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1942&q=80");
 }
+
 .fighter-main-container {
   max-width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQhi3dQ_6QEuL-88JKbp9beI6HKSmJ8i2XgkQ&usqp=CAU");
+  background-repeat: repeat;
 }
 
 .fighter-main-col-1 {
@@ -323,8 +348,13 @@
 
 /*Me Fighter Info Card */
 .me-fighter {
-  border: 1px red solid;
+  margin-top: 10px;
+  padding: 10px 10px;
   display: flex;
+  justify-content: space-between;
+  color: white;
+  width: 300px;
+  background-image: url("https://images-na.ssl-images-amazon.com/images/I/5103f69uO2L._AC_SX355_.jpg");
 }
 
 .me-fighter-imageUrl {
@@ -336,13 +366,50 @@
   flex-direction: column;
 }
 
+.me-fighter-form {
+  font-weight: 600;
+  color: red;
+}
+
+.me-fighter-upper-left {
+  padding: 5px 5px;
+  display: flex;
+  border-bottom: 1px solid white;
+  flex-direction: column;
+}
+.me-fighter-lower-left {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 5px;
+}
+
+.me-fighter-name {
+  text-align: center;
+}
+.me-fighter-right {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 5px;
+}
+
+.me-fighter-ava-div {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.404);
+}
+.me-fighter-ava-div img {
+  width: 100%;
+}
+
 /*  Match Card */
 .match-card {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   width: 600px;
-
+  /* background-image: url("https://img.freepik.com/free-photo/grunge-perforated-metallic-texture-background_1048-12284.jpg?size=626&ext=jpg"); */
   justify-content: center;
   background-color: rgb(0, 0, 0);
 }
@@ -355,7 +422,7 @@
   padding: 5px 5px;
   font-weight: 500;
   color: white;
-  background-color: #036b7e;
+  background-color: #660708;
 
   display: flex;
   justify-content: space-between;
@@ -365,9 +432,14 @@
   justify-content: space-between;
   text-align: center;
   border: 3px solid;
-  border: 2px orange solid;
+  border: 2px rgb(0, 0, 0) solid;
   color: white;
   padding: 10px 10px;
+}
+
+.match-card-body-left {
+  display: flex;
+  align-items: center;
 }
 .match-card-fighter-name {
   font-weight: 700;
@@ -387,6 +459,8 @@
 .host-main {
   display: flex;
   justify-content: space-between;
+  background-image: url("https://img.freepik.com/free-photo/grunge-perforated-metallic-texture-background_1048-12284.jpg?size=626&ext=jpg");
+  /* background-image: url("https://cdn.pixabay.com/photo/2017/11/02/14/03/metal-2911278_1280.jpg"); */
 }
 
 /* Me Host*/
@@ -450,6 +524,8 @@
 .match-card {
   display: flex;
   justify-content: space-between;
+  background-image: url("https://image.freepik.com/free-photo/grunge-texture-background-with-metallic-design_1048-12348.jpg");
+  /* background-size: ; */
 }
 
 /* Sparring page*/
@@ -466,27 +542,81 @@
   align-items: center;
 }
 
+/* Sparring request List in fighter main*/
+.fighter-main-col-1 {
+  margin-right: 10px;
+}
+.spar-request-list-container {
+  margin-top: 10px;
+  /* margin-left: 10px; */
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.432);
+}
+
+.spar-request-list-title {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  padding: 10px 10px;
+  background-color: black;
+  width: 100%;
+}
+
+.spar-request-no-fighter {
+  text-align: center;
+  padding: 10px 10px;
+
+  font-style: italic;
+}
+
 /* Sparring request card*/
+.spar-request-card-container {
+  padding: 10px 10px;
+}
 
 .spar-request-card-img {
-}
-.spar-request-card-actual-img {
   width: 100px;
   height: 100px;
+  display: flex;
+}
+.spar-request-card-actual-img {
+  width: 100%;
 }
 
 .spar-request-card {
   display: flex;
-  justify-content: left;
+  flex-direction: column;
+}
+.spar-request-card-upper {
+  display: flex;
 }
 
 .spar-request-card-right {
-  display: flex;
-  align-items: center;
+  margin-left: 10px;
+  width: 100%;
 }
 
+.spar-request-header {
+}
+
+.spar-requester-name {
+  font-weight: 600;
+  color: white;
+  text-decoration: underline;
+}
+.spar-requester-stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spar-requester-division {
+}
+.spar-request-two-button {
+  display: flex;
+  justify-content: space-between;
+}
 .spar-request-button button {
-  margin: 20px;
+  margin: 20px 0;
   align-self: center;
   text-transform: uppercase;
   width: 120px;
@@ -497,6 +627,47 @@
   background-color: black;
   color: white;
   padding: 5px 5px;
+  font-size: 10px;
+}
+
+.spar-request-card-lower {
+  text-align: center;
+}
+
+.spar-request-card-sent {
+  margin-top: 10px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.356);
+  background-color: rgba(245, 245, 245, 0.377);
+}
+
+.spar-card-sent {
+  border-radius: 5px;
+  padding: 5px 5px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.356);
+  background-color: rgba(245, 245, 245, 0.377);
+}
+
+.spar-request-card-sent div {
+}
+
+.review-rating {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.spar-card-stance {
+  font-size: 10px;
+}
+
+.spar-card-stats {
+  display: flex;
   font-size: 10px;
 }
 
@@ -529,7 +700,7 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 25px;
-  background-color: rgb(255, 98, 50);
+  background-color: rgb(155, 77, 53);
   margin: 10px;
   color: white;
   filter: drop-shadow(0 0 2px rgb(88, 88, 88));
@@ -553,8 +724,133 @@
   /* border-radius: 50%; */
 }
 
+.fighter-unknown-img img {
+  position: absolute;
+  min-width: 70px;
+  height: 70px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fighter-2-img img {
+  position: absolute;
+  min-width: 70px;
+  height: 70px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fighter-unknown {
+  margin-left: 5px;
+}
+
+.fighter-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fighter-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fighter-2-img {
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  position: relative;
+  /* border-radius: 50%; */
+}
+
+.fighter-unknown-img {
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  position: relative;
+  /* border-radius: 50%; */
+}
+
 .vs {
   font-style: italic;
   font-weight: 700;
   color: #e5383b;
+}
+
+.match-card-match-info {
+  background-color: rgba(0, 0, 0, 0.596);
+  /* border-radius: 20px; */
+  padding: 10px;
+}
+
+.host-create-match-page {
+  background-image: url("https://www.nonprofitmarketingguide.com/blog/wp-content/uploads/2019/09/bigstock-View-Of-Empty-Professional-Are-250580374-900x450.jpg");
+  background-size: cover;
+  height: 100vh;
+  min-height: 100%;
+}
+
+.sparring-page--nav {
+  background-image: url("https://cdn.wallpapersafari.com/49/93/Qcp93O.jpg");
+  min-height: 100vh;
+  /* height: 100vh; */
+  background-size: cover;
+}
+
+.spar-card {
+  /* border: 2px solid green; */
+  padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
+  width: 250px;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.spar-card-img {
+  border-radius: 50%;
+  margin: 20px;
+  width: 150px;
+}
+
+.spar-card-name {
+  color: yellow;
+}
+
+.fighter-div-division {
+  font-size: 12px;
+}
+
+.spar-card .badge-secondary {
+  font-size: 15px !important ;
+}
+
+.spar-card button {
+  text-align: center;
+  width: 100%;
+}
+
+.spar-card-button-div {
+  display: flex;
+  justify-content: center;
+}
+
+.spar-partner-list {
+  color: white;
+}
+
+.request-join {
+  color: white;
+  background-color: rgb(187, 46, 81);
+  filter: drop-shadow(0 0 2px rgb(255, 255, 255));
+  border-radius: 10px;
+  padding: 3px 5px;
 }

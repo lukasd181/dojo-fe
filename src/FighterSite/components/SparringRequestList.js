@@ -19,7 +19,7 @@ const SparringRequestList = () => {
 
   useEffect(() => {
     if (meFighter) {
-        // console.log("asdasdasdasdsdasdadasda", meFighter)
+      // console.log("asdasdasdasdsdasdadasda", meFighter)
       dispatch(partnershipAction.getReceivedSparRequest(meFighter._id, 1));
     }
   }, [meFighter]);
@@ -27,10 +27,10 @@ const SparringRequestList = () => {
   const sparRequestDisplayLogic = () => {
     if (sparRequests) {
       if (sparRequests.length === 0) {
-        return <div>No Spar Request Found Jet</div>;
+        return <div className="spar-request-no-fighter">No Spar Request Found Jet</div>;
       } else if (sparRequests.length > 0) {
         return (
-          <div>
+          <div className="spar-request-list">
             {" "}
             {sparRequests ? (
               sparRequests.map((sparRequest) => (
@@ -47,7 +47,14 @@ const SparringRequestList = () => {
 
   return (
     <div>
-      <div>{sparRequestDisplayLogic()}</div>
+      <div className="spar-request-list-container">
+        <div className="spar-request-list-header">
+          <div className="spar-request-list-title">
+            Sparring Request List
+          </div>
+        </div>
+        {sparRequestDisplayLogic()}
+      </div>
     </div>
   );
 };

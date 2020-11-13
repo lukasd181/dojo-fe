@@ -167,8 +167,7 @@ const MatchFeed = () => {
           </div>
           <div className="match-feed-body">
             {matchList && console.log(matchList)}
-            {matchList &&
-              matchList.map((match) => <FighterMatchCard match={match} />)}
+            {matchList && matchList.map((match) => <MatchCard match={match} />)}
           </div>
           <MatchPagination />
         </div>

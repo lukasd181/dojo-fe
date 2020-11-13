@@ -34,7 +34,7 @@ const SparringPage = () => {
     }
   }, [currentPage, filter]);
   return (
-    <div>
+    <div className="avoidNav sparring-page--nav">
       {fighterList ? (
         <div className="sparring-page">
           <div className="sparring-header">
@@ -97,7 +97,7 @@ const SparringPage = () => {
           {fighterList.length == 0 ? (
             <h1>Fighter Not Found</h1>
           ) : (
-            <div className="sparring-card-list">
+            <div className="sparring-card-list container">
               {fighterList ? (
                 fighterList.map((fighter, index) => (
                   <FighterCard fighter={fighter} index={index} />

@@ -12,38 +12,39 @@ const MeFighterInfoCard = () => {
   }, []);
   return (
     <div>
-      <div>ME</div>
       {meFighter ? (
         <div className="me-fighter">
           <div className="me-fighter-left">
-            <div className="me-fighter-name">{meFighter.creator.name}</div>
-            <div className="me-fighter-form">{meFighter.forms[0]}</div>
-            <div className="me-fighter-division">
-              Your division: {meFighter.division}
-            </div>
+            <div className="me-fighter-upper-left">
+              <div className="me-fighter-form">{meFighter.forms[0]}</div>
+              <div className="me-fighter-division">{meFighter.division}</div>
 
-           
-            <div className="me-fighter-stance">
-              favorite stance: {meFighter.stance}
+              <div className="me-fighter-stance">{meFighter.stance}</div>
             </div>
-            <div className="Stats">
-              Your stats
-              <div className="me-fighter-height">
-                height: {meFighter.height}
-              </div>
-              <div className="me-fighter-weight">
-                weight: {meFighter.weight}
-              </div>
-              <div className="me-fighter-matchesAttended">
-                Matches: {meFighter.matchesAttended}
+            <div className="me-fighter-lower-left">
+              <div className="Stats">
+                Your stats
+                <div className="me-fighter-height">
+                  height: {meFighter.height}
+                </div>
+                <div className="me-fighter-weight">
+                  weight: {meFighter.weight}
+                </div>
+                <div className="me-fighter-matchesAttended">
+                  Matches: {meFighter.matchesAttended}
+                </div>
               </div>
             </div>
           </div>
           <div className="me-fighter-right">
-            <img
-              className="me-fighter-imageUrl"
-              src={meFighter.creator.avatarUrl}
-            />
+            <div className="me-fighter-ava-div">
+              <img
+                className="me-fighter-imageUrl"
+                src={meFighter.creator.avatarUrl}
+              />
+            </div>
+
+            <div className="me-fighter-name">{meFighter.creator.name}</div>
           </div>
         </div>
       ) : (

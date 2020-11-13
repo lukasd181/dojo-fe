@@ -8,24 +8,31 @@ import { matchAction } from "redux/actions/match.action";
 const HostCreateMatchPage = () => {
   const currentHost = useSelector((state) => state.host.host);
   const dispatch = useDispatch();
+  const [fighter1, setFighter1] = useState("");
+  const [fighter2, setFighter2] = useState("");
   const [matchInfo, setMatchInfo] = useState({
     rounds: 3,
     roundDuration: 3,
     form: "MuayThai",
     gender: "female",
     division: "Strawweight",
-    fighters: [],
     location: "",
-    timeHappen: "",
+    timeHappen: null,
     host: currentHost._id,
     matchTitle: "",
   });
   const handleSubmit = () => {
-    console.log("match info submit", matchInfo);
-    dispatch(matchAction.createMatch(matchInfo));
+    let fighters = [];
+    let realMatchInfo = matchInfo;
+    if (fighter1) fighters.push(fighter1);
+    if (fighter2) fighters.push(fighter2);
+    realMatchInfo["fighters"] = fighters;
+
+    console.log("match info submit", realMatchInfo);
+    dispatch(matchAction.createMatch(realMatchInfo));
   };
   return (
-    <div>
+    <div className="avoidNav host-create-match-page">
       <div className="create-fighter-container">
         <div className="create-fighter-body">
           <Form
@@ -110,7 +117,7 @@ const HostCreateMatchPage = () => {
               <option>4</option>
               <option>5</option>
             </Form.Control>
-            
+
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Match Title</Form.Label>
               <Form.Control
@@ -133,16 +140,38 @@ const HostCreateMatchPage = () => {
                 }}
               />
             </Form.Group>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Fighter 1</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter fighter's ID"
+                onChange={(e) => {
+                  console.log(e.target.value);
+                  setFighter1(e.target.value);
+                }}
+              />
+            </Form.Group>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Fighter 2</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter fighter's ID"
+                onChange={(e) => {
+                  console.log(e.target.value);
+                  setFighter2(e.target.value);
+                }}
+              />
+            </Form.Group>
 
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Match Occur</Form.Label>
               <DatePicker
                 selected={matchInfo.timeHappen}
-                onChange={(date) =>
-                  setMatchInfo({ ...matchInfo, timeHappen: date })
-                }
+                onChange={(date) => {
+                  console.log(date);
+                  setMatchInfo({ ...matchInfo, timeHappen: date });
+                }}
               />
-
             </Form.Group>
 
             <Form.Group controlId="formBasicEmail">
